@@ -84,6 +84,7 @@ HAVING COUNT(l.database_id) > 100;
 ### B. Determine the position of the last `VLF` in transaction log before shrinking the log file
 
 The following query can be used to determine the position of the last active VLF before running SHRINK FILE on transaction log to determine if transaction log can shrink.
+It's not suitable for high availablity scenario. For HA scenario, please refer to DMV sys.dm_db_log_stats.
 
 ```sql
 USE AdventureWorks2016
